@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+	<style type="text/css">
+		
+		.fundoM{
+			background-color: #e9ebee;
+		}
+
+		.fundoF{
+			background-color: pink;
+		}
+
+		.fundoO{
+			background-color: yellow;
+		}
+
+	</style>
+	<script type="text/javascript">
+
+		function trocar(){
+			var obj=document.getElementById('corpo');
+
+			if(obj.className==''){
+				obj.className='fundoO';
+			} else if (obj.className=='fundoM')
+				obj.className='fundoF';
+			else{
+				obj.className='fundoM';
+ 			}
+		}
+	</script>
+</head>
+
+<body id="corpo" class="fundoM">	
+	<form>
+		<div>
+			<label>Genero</label><br/>
+			<div>
+				<label>Masculino</label>
+				<input onchange="trocar();" type="radio" name="genero" value="Masculino" checked><br/>
+				<label>Feminino</label>
+				<input onchange="trocar();" type="radio" name="genero" value="Feminino"><br/>
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>
