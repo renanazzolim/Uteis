@@ -20,37 +20,55 @@
 	</style>
 	<script type="text/javascript">
 
-		function trocar(){
+		function trocarCor(){
 			var obj=document.getElementById('corpo');
 
-			if(obj.className==''){
-				obj.className='fundoO';
-			} else if (obj.className=='fundoM')
+			if (obj.className=='fundoM'){
 				obj.className='fundoF';
-			else{
+			} else{
 				obj.className='fundoM';
  			}
 		}
+
+		function alterarImagem(op) {
+			if (op == 1) {
+				document.getElementById('img').src = 'cachorro.jpg'
+			}else{
+				document.getElementById('img').src = 'gato.jpg'
+			}
+		}
+
+		function alterarTipoPessoa(op){
+
+		}
+			
 	</script>
 </head>
 
 <body id="corpo" class="fundoM">	
 	<form>
 		<div>
-			<label>Genero</label><br/>
+			<label>Genero</label><br>
 			<div>
 				<label>Masculino</label>
-				<input onchange="trocar();" type="radio" name="genero" value="Masculino" checked><br/>
+				<input onchange="trocarCor();" type="radio" name="genero" value="Masculino" checked onclick="alterarImagem('1')"><br>
 				<label>Feminino</label>
-				<input onchange="trocar();" type="radio" name="genero" value="Feminino"><br/>
+				<input onchange="trocarCor();" type="radio" name="genero" value="Feminino" onclick="alterarImagem('2')"><br/><br>
+				<img src="cachorro.jpg" id="img" width="100">
+				<br>
+				<label>Pessoa:</label>
+				<input type="radio" name="tipopessoa" value="Fisica" checked>Física</input>
+				<input type="radio" name="tipopessoa" value="Juridica" checked>Jurídica</input>
+				<br>
+				<label>CPF:</label>
+				<input type="text" name=""></input>
+				<br>
+				<br>
 			</div>
+			
 		</div>
 		<button onclick="alert('enviado')">Enviar</button>
 	</form>
-
-
-
-
 
 
 </body>
