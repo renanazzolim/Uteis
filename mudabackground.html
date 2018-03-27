@@ -32,14 +32,22 @@
 
 		function alterarImagem(op) {
 			if (op == 1) {
-				document.getElementById('img').src = 'cachorro.jpg'
+				document.getElementById('img').src = 'cachorro.jpg';
 			}else{
-				document.getElementById('img').src = 'gato.jpg'
+				document.getElementById('img').src = 'gato.jpg';
 			}
 		}
 
 		function alterarTipoPessoa(op){
+			let label = document.getElementById('testepessoa');
+			if(op == 1){
+				label.innerHTML = 'CPF: ';
+				document.getElementById('teste1').name = 'cpf';
 
+			} else {
+				label.innerHTML = 'CNPJ:';
+				document.getElementById('teste1').name = 'cnpj';
+			}
 		}
 			
 	</script>
@@ -57,11 +65,11 @@
 				<img src="cachorro.jpg" id="img" width="100">
 				<br>
 				<label>Pessoa:</label>
-				<input type="radio" name="tipopessoa" value="Fisica" checked>Física</input>
-				<input type="radio" name="tipopessoa" value="Juridica" checked>Jurídica</input>
+				<input type="radio" name="tipopessoa" value="fisica" checked onclick="alterarTipoPessoa('1')">Física</input>
+				<input type="radio" name="tipopessoa" value="juridica" onclick="alterarTipoPessoa('2')">Jurídica</input>
 				<br>
-				<label>CPF:</label>
-				<input type="text" name=""></input>
+				<label id="testepessoa">CPF:</label>
+				<input type="text" id="teste1" name="cpf"></input>
 				<br>
 				<br>
 			</div>
